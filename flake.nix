@@ -1,12 +1,9 @@
 {
-  inputs.nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
-  inputs.flake-utils.url = github:numtide/flake-utils;
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs";
+  };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      {
-        packages = (import ./default.nix)
-            { pkgs = nixpkgs.legacyPackages.${system};};
-      }
-    );
+  outputs = { self, nixpkgs }: {
+    defaultPackage.x86_64-linux = import ./default.nix;
+  };
 }
