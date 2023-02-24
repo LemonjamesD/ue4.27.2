@@ -4,6 +4,6 @@
   };
 
   outputs = { self, nixpkgs }: {
-    defaultPackage.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.callPackage ./default.nix {};
+    packages.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.callPackage ./default.nix {};
   };
 }
