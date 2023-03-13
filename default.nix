@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   src = requireFile {
     name = "${sourceRoot}.zip";
     url = "https://github.com/EpicGames/UnrealEngine/releases/tag/${version}";
-    sha256 = "1rh6r2z00kjzq1i2235py65bg9i482az4rwr14kq9n4slr60wkk1";
+    sha256 = "XGOb+6VIvpQvqC7FP7dK2o+6TOSJo0eOheq4m2jHSvI=";
   };
   unpackPhase = ''
     ${unzip}/bin/unzip $src
